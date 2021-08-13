@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Component
@@ -21,6 +22,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(User user) {
+        Optional<User> userOptional = userRepository.findUserByEmail(user.getEmail());
+        if(userOptional.isPresent()){
+            throw new IllegalStateException("email already taken");
+        }
         return userRepository.save(user);
     }
 }

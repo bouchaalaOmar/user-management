@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Component
@@ -21,6 +22,10 @@ public class PhoneServiceImpl implements PhoneService {
 
     @Override
     public Phone save(Phone phone) {
+        Optional<Phone> phoneOptional = phoneRepository.findPhoneByNum(phone.getNum());
+        if(phoneOptional.isPresent()){
+            throw new IllegalStateException("phone numero already taken");
+        }
         return phoneRepository.save(phone);
     }
 }
