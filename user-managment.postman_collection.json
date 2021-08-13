@@ -1,0 +1,70 @@
+{
+	"id": "b9caf63c-101f-fdee-c5bf-bcc4d549a579",
+	"name": "user-managment",
+	"description": "",
+	"order": [
+		"50a0e6d5-d719-503c-1ed2-488068a0adb9",
+		"516fd9a3-1fe2-f270-6752-47c11df99780"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1628860240125,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "50a0e6d5-d719-503c-1ed2-488068a0adb9",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/user",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "b9caf63c-101f-fdee-c5bf-bcc4d549a579",
+			"data": [],
+			"dataMode": "raw",
+			"name": "add new user",
+			"description": "add new user with one or multiple phone number",
+			"descriptionFormat": "html",
+			"time": 1628860297002,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"firstName\": \"foulen\",\n\t\"lastName\": \"ben foulen\",\n\t\"email\": \"foulen@gmail.com\",\n\t\"phones\":[{\"num\": \"+216 2751311\"}, {\"num\": \"+216 25175311\"}]\n}"
+		},
+		{
+			"id": "516fd9a3-1fe2-f270-6752-47c11df99780",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8080/api/user",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "b9caf63c-101f-fdee-c5bf-bcc4d549a579",
+			"data": null,
+			"dataMode": "params",
+			"name": "get all users",
+			"description": "return all users with their phone number(s)",
+			"descriptionFormat": "html",
+			"time": 1628860368823,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
