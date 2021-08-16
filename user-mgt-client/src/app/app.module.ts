@@ -8,10 +8,13 @@ import {UserService} from './service/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
+import { PhoneComponent } from './shared/component/phone/phone.component';
+import {NgxFlagPickerModule} from "ngx-flag-picker";
 
 const routes: Routes = [
   {path: 'user-list', component: UserListComponent},
   {path: 'user-new', component: NewUserComponent},
+  {path: 'phone', component: PhoneComponent },
   {path: '', component: UserListComponent}
 ];
 
@@ -19,13 +22,15 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     UserListComponent,
-    NewUserComponent
+    NewUserComponent,
+    PhoneComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxFlagPickerModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

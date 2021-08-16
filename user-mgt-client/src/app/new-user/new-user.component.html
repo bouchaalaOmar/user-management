@@ -1,31 +1,30 @@
-<div class="col-sm-6 container-fluid">
+<div class="col-sm-5 container-fluid">
   <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
     <div class="mb-3 form-group">
       <label for="firstName" class="form-label">Prénom</label>
       <input type="text" id="firstName" class="form-control" formControlName="firstName">
     </div>
-    <div class="form-group">
+    <div class="mb-3 form-group">
       <label for="lastName" class="form-label">Nom</label>
       <input type="text" id="lastName" class="form-control" formControlName="lastName">
     </div>
-    <div class="form-group">
+    <div class="mb-3 form-group">
       <label for="email" class="form-label">Email</label>
       <input type="email" id="email" class="form-control" formControlName="email">
     </div>
     <div formArrayName="phones">
       <br>
       <h5>Vos Numéros</h5>
-      <div class="form-group"
+      <div mb-3 class="form-group mb-2 w-50"
            *ngFor="let phoneControl of getPhones().controls;let i=index">
         <input type="text" class="form-control" [formControlName]="i">
       </div>
       <br>
-      <button type="button" class="btn btn-success" (click)="onAddPhone()">
+      <button type="button" class="mb-3 btn btn-success" (click)="onAddPhone()">
         Ajouter un téléphone
       </button>
-      <br>
     </div>
-    <br>
+
     <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">
       Enregistrer
     </button>

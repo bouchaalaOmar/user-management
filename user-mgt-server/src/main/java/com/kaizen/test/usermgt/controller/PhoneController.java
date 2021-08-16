@@ -5,6 +5,7 @@ import com.kaizen.test.usermgt.service.PhoneService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -29,7 +30,7 @@ public class PhoneController {
      * @return
      */
     @PostMapping
-    public Phone addNewPhone(@RequestBody Phone phone){
+    public Phone addNewPhone(@Valid @RequestBody Phone phone){
         return phoneService.save(phone);
     }
 }

@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center">
+  <div class="d-inline-block">
+    <ngx-flag-picker
+      [selectedCountryCode]="selectedCountryCode"
+      [countryCodes]="countryCodes"
+      [customLabels]="customLabels"
+      (changedCountryCode)="changeSelectedCountryCode($event)">
+    </ngx-flag-picker>
+  </div>
+  <div class="d-inline-block">
+    <div class="w-70 form-group">
+      <input type="text" class="form-control">
+    </div>
+  </div>
+</div>

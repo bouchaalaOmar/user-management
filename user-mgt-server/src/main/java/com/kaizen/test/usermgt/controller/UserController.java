@@ -5,6 +5,7 @@ import com.kaizen.test.usermgt.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -29,7 +30,7 @@ public class UserController {
      * @return
      */
     @PostMapping
-    public User addNewUser(@RequestBody User user){
+    public User addNewUser(@Valid @RequestBody User user){
         return userService.save(user);
     }
 }
